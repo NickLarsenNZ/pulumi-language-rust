@@ -9,6 +9,7 @@ See [pulumi/pulumi#3622][language-request]
 _Off the cuff_
 
 1. Implement a [gRPC Server][grpc-server] in Rust to see if that is simple enough
+   - Code generation to reduce human burden. See [logrocket-grpc-guide]
 2. Implement a bare minimum [gRPC Client][grpc-client]
 3. Make it resolve a single output
    ```rust
@@ -20,11 +21,11 @@ _Off the cuff_
    ```
 4. Make it apply a resource
    - Maybe use S3 bucket as an example
-6. Build up the sdk (like the imports in other languages)
+5. Build up the sdk (like the imports in other languages)
    - `pulumi::pulumi`
    - `pulumi::aws`
    - ...
-7. Make macros
+6. Make macros
    - macro rules for resource dsls (inspired by [clap])
      ```rust
      let cluster = aws::eks::cluster!(my_cluster =>
@@ -57,3 +58,4 @@ See [wiki][language-implementation-guide] as a guide
 [language-request]: https://github.com/pulumi/pulumi/issues/3622
 [clap]: https://github.com/clap-rs/clap#using-macros
 [language-implementation-guide]: https://github.com/pulumi/pulumi/wiki/New-Language-Bring-Up
+[logrocket-grpc-guide]: https://blog.logrocket.com/rust-and-grpc-a-complete-guide/
